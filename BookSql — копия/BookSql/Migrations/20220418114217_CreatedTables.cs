@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BookSql.Migrations
 {
-    public partial class CreatedTable : Migration
+    public partial class CreatedTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -60,9 +60,8 @@ namespace BookSql.Sql
                                             
                                             break;
                                         case 1:
-                                            SqlBookGenre.AddGenre(Inputs.StringInput("Genre Name"));
 
-                                            sql.SaveChanges();
+                                            
                                             break;
                                         case 2:
 
@@ -188,12 +187,7 @@ namespace BookSql.Sql
             }
         }
 
-        public static void AddPublisherBook(string publiName, string bookName)
-        {
-            using (AppDbContext sql = new AppDbContext())
-            {
-                
-            }
-        }
+
+       
     }
 }

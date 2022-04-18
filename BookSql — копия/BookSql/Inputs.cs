@@ -112,7 +112,9 @@ namespace BookSql
                 switch (choise)
                 {
                     case 0: break;
-                    case 1: break;
+                    case 1:
+                        SqlBookGenre.Create();
+                        break;
                     case 2:
                         SqlBookGenre.Remove(NumberInput<int>("Id", 0));
                         break;

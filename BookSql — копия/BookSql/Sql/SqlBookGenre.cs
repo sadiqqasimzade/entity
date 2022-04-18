@@ -10,13 +10,15 @@ namespace BookSql.Sql
 {
     internal class SqlBookGenre
     {
-        public static void Create(Genre genre, Book book)
+        public static void Create()
         {
             using (AppDbContext sql = new AppDbContext())
             {
                 BookGenre bookGenre = new BookGenre();
-                bookGenre.Genre = genre;
-                bookGenre.Book = book;
+                bookGenre.Book.Name = Inputs.StringInput("KitabName");
+                bookGenre.Genre.Name = Inputs.StringInput("Genre");
+                bookGenre.BookId = SqlBookGenre.FindBookIdWithName(bookGenre.Book.Name);
+                bookGenre.GenreId = SqlBookGenre.FindGenreIdWithName(bookGenre.Genre.Name);
                 sql.Add(bookGenre);
                 sql.SaveChanges();
             }
@@ -53,10 +55,62 @@ namespace BookSql.Sql
         {
             using (AppDbContext sql = new AppDbContext())
             {
-               
+
                 BookGenre bookGenre = sql.BookGenres.Include(bg => bg.Genre).ThenInclude(g => g.Name).SingleOrDefault(bg => bg.Genre.Name != genrename);
                 sql.BookGenres.Add(bookGenre);
                 sql.SaveChanges();
+            }
+        }
+
+        public static int FindBookIdWithName(string name)
+        {
+            using (AppDbContext sql = new AppDbContext())
+            {
+                List<Book> books = sql.Books.ToList();
+                bool isOk = false;
+                foreach (var item in books)
+                {
+                    if (item.Name != name)
+                    {
+                        isOk = true; break;
+                    }
+                }
+                if (isOk)
+                {
+                    if (!sql.Books.Any(p => p.Name == name))
+                    {
+                        Console.WriteLine("There is no book like this name");
+                    }
+                    Book book = sql.Books.SingleOrDefault(b => b.Name == name);
+                    return book.Id;
+                }
+                else Console.WriteLine("The book by this name already exists"); return -1;
+            }
+        }
+
+        public static int FindGenreIdWithName(string name)
+        {
+            using (AppDbContext sql = new AppDbContext())
+            {
+                List<Genre> genres = sql.Genres.ToList();
+                bool isOk = false;
+                foreach (var item in genres)
+                {
+                    if (item.Name != name)
+                    {
+                        isOk = true; break;
+                    }
+                }
+                if (isOk)
+                {
+                    if (!sql.Genres.Any(p => p.Name == name))
+                    {
+                        Console.WriteLine("There is no genre like this name");
+                    }
+                    Genre genre = sql.Genres.SingleOrDefault(p => p.Name == name);
+                    return genre.Id;
+                }
+                else Console.WriteLine("The genre by this name already exists"); return -1;
             }
         }
     }

@@ -9,7 +9,7 @@ namespace BookSql.DAL
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=ADMIN\SQLEXPRESS;Database=BookShop;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=213-16;Database=BookShop;Trusted_Connection=True;");
         }
 
         public DbSet<Author> Authors { get; set; }

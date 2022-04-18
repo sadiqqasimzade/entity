@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookSql.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220418094304_CreatedTable")]
-    partial class CreatedTable
+    [Migration("20220418114217_CreatedTables")]
+    partial class CreatedTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

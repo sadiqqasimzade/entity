@@ -22,6 +22,8 @@
     <Compile Remove="Migrations\20220418074710_CreatedTables.Designer.cs" />
     <Compile Remove="Migrations\20220418094219_CreatedTable.cs" />
     <Compile Remove="Migrations\20220418094219_CreatedTable.Designer.cs" />
+    <Compile Remove="Migrations\20220418094304_CreatedTable.cs" />
+    <Compile Remove="Migrations\20220418094304_CreatedTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
