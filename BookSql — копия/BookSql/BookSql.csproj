@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220417142533_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220417142533_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220417213348_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220417213348_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220417214445_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220417214445_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220417222002_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220417222002_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220418072940_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220418072940_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220418074659_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220418074659_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220418074710_CreatedTables.cs" />
+    <Compile Remove="Migrations\20220418074710_CreatedTables.Designer.cs" />
+    <Compile Remove="Migrations\20220418094219_CreatedTable.cs" />
+    <Compile Remove="Migrations\20220418094219_CreatedTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.24">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
